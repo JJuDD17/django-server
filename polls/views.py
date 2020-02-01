@@ -8,7 +8,7 @@ from random import randint, choice
 
 ascii_letters += ',.:; '
 def index(request: WSGIRequest):
-    latest_question_list = Question.objects.order_by('-pub_date')
+    latest_question_list = Question.objects.order_by('-pub_date')[:5]
     template = loader.get_template('polls\index.html')
     context = {
         'latest_question_list': latest_question_list,
