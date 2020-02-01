@@ -1,0 +1,15 @@
+{% if posts_list %}
+    <ul>
+    {% for post in posts_list %}
+        <li>
+            <p>{{ post.post_text }}</p>
+            {% if post.post_image %}
+                <img src="{{ post.post_image.url }}" alt="">
+            {% endif %}
+            <p>{{ post.pub_date }}</p>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No posts are available.</p>
+{% endif %}
