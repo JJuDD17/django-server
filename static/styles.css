@@ -1,0 +1,29 @@
+h2{
+    color: rgb(139, 43, 228);
+    border: 2px dashed darkblue;
+}
+div{
+    border: 2px solid red;
+    padding-left: 2px;
+    padding-right: 2px;
+    margin-bottom: 3px;
+}
+body{
+    margin: 2px;
+    /*background-image: url("bg.jfif");
+    background-size: cover;*/
+}
+img{
+    color: rgb(255, 166, 0);
+}
+.bg{
+    background-color: teal;
+    width: 50px;
+    height: 50px;
+}
+.bg-div{
+    width: 80%;
+    height: 500px;
+    background-image: url("bg.jfif");
+    background-size: cover;
+}
