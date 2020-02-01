@@ -11,7 +11,10 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
-import django_heroku
+try:
+    import django_heroku
+except ModuleNotFoundError:
+    pass
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -56,7 +59,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': ['polls/templates'],
+        'DIRS': ['polls/templates/polls'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -121,4 +124,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-django_heroku.settings(locals())
+try:
+    django_heroku.settings(locals())
+except NameError:
+    pass
